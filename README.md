@@ -21,7 +21,7 @@
 
 ---
 
-## 🎯 Purpose & Philosophy
+## Purpose & Philosophy
 
 AI coding agents (such as **Claude Code**, **OpenAI Codex**, **Google Antigravity**, and **Cursor**) possess incredible technical abilities, but when given vague prompts like *"build me an Uber for dog walkers"*, they frequently:
 - **Hallucinate** architectural decisions and introduce mismatched libraries.
@@ -42,7 +42,7 @@ When you point an agent at this harness with **The Magic Prompt**, the agent fol
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - **No Technical Jargon:** Interactive wizard designed specifically for non-technical founders and creators.
 - **Full Keyboard Navigation:**
@@ -62,7 +62,7 @@ When you point an agent at this harness with **The Magic Prompt**, the agent fol
   - **Anthropic Claude:** Claude 3.5 / 3.7 Sonnet via OpenRouter API key without region restrictions.
   - **OpenAI Codex / GPT-4o:** Official OpenAI API key support.
   - **Custom Endpoint:** Any OpenAI-compatible server or proxy.
-  - First-run setup wizard with persistent storage in `~/.config/daedalus/config.json` (`0600` permissions).
+  - First-run setup wizard with persistent credentials stored in the OS config directory (`0600` permissions on Unix-like systems).
 - **Anti-Hallucination 3-Pass Engine:**
   - **Pass 1 (The Architect):** Synthesizes application context, database entity schemas, and user journeys.
   - **Pass 2 (The Tech Lead):** Defines directory layout, exact verification commands (`test`, `lint`, `run`, `build`), and non-negotiable coding rules.
@@ -73,7 +73,7 @@ When you point an agent at this harness with **The Magic Prompt**, the agent fol
 
 ---
 
-## 📦 Installation & Quick Start
+## Installation & Quick Start
 
 ### Build from Source
 
@@ -100,7 +100,21 @@ go install ./cmd/daedalus
 
 ---
 
-## 🛠️ Usage
+## Platform Support
+
+Daedalus is actively tested on Linux and macOS. Windows is currently untested and
+not officially supported; it may work, but issues may appear around terminal
+rendering and config paths. Bug reports from Windows users are welcome.
+
+| OS | Config location |
+| :--- | :--- |
+| Linux | `~/.config/daedalus/config.json` (or `$XDG_CONFIG_HOME/daedalus/config.json`) |
+| macOS | `~/Library/Application Support/daedalus/config.json` |
+| Windows | `%AppData%\daedalus\config.json` |
+
+---
+
+## Usage
 
 ### 1. Launch the Wizard
 Simply run:
@@ -124,7 +138,7 @@ Once generated, `daedalus` outputs **The Magic Prompt**. Simply copy and paste i
 - Cursor / Windsurf
 
 ```text
-✨ THE MAGIC PROMPT:
+THE MAGIC PROMPT:
 I have set up the complete Daedalus Agent Harness for 'recipe-vault'.
 Please read CONTEXT.md for system architecture, AGENTS.md for operational rules and
 verification commands, and PROGRESS.md for the phased roadmap.
@@ -134,7 +148,7 @@ PROGRESS.md to mark it complete. Let's begin!
 
 ---
 
-## ⚙️ Configuration & Providers
+## Configuration & Providers
 
 Daedalus supports all major OpenAI-compatible LLM endpoints:
 
@@ -170,7 +184,7 @@ daedalus -reconfig
 
 ---
 
-## 🏛️ Architecture & Project Structure
+## Architecture & Project Structure
 
 ```text
 daedalus/
@@ -197,6 +211,6 @@ daedalus/
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
